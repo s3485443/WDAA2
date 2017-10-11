@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\CustInfo;
 use App\TicketDetail;
 use App\Tickets;
 
@@ -14,6 +13,7 @@ class TicketController extends Controller
         $ticket = Tickets::all();
         return view('submission.create', ['tickets'=>$ticket]);
     }
+
     public function review(Request $request)
     {
         $tickets= Tickets::orderBy('id', 'DESC')->paginate(5);
@@ -48,8 +48,6 @@ class TicketController extends Controller
         $details->TicketNo = $tickets->id;
         $details->save();
 
-        return redirect()->route('submission.create');
+        return redirect()->route('submission.create') ->with('success', 'Ticket submitted successfully');
     }
-
-
 }

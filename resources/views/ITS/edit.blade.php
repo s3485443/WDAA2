@@ -42,16 +42,17 @@
             {!! Form::textarea('comments', '', ['class' => 'form-control']) !!}
         </div>
         <div class="form-group" style="padding-left: 40px; padding-right: 40px;">
-        {!!Form::select('progress',
-        array('pending' => 'Pending',
-        'In Progress'=>'In Progress',
-        'Unresolved'=>'Unresolved',
-        'Resolved'=>'Resolved')
-        )  !!}
+            <div><strong>Indicate progress</strong></div>
+            {!!Form::select('progress',
+            array('pending' => 'Pending',
+            'In Progress'=>'In Progress',
+            'Unresolved'=>'Unresolved',
+            'Resolved'=>'Resolved')
+            )  !!}
         </div>
         <div class="form-group" style="padding-left: 40px; padding-right: 40px;">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
-
 @endsection
+

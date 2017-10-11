@@ -19,8 +19,6 @@ class ITSController extends Controller
         return view ('ITS.index', compact('tickets'))->with('i', ($request->input('page',1)-1)*5);
     }
 
-
-
     /**
      * Show the form for creating a new resource.
      *
@@ -82,6 +80,7 @@ class ITSController extends Controller
 
         Tickets::find($id)->update($request->all());
         TicketDetail::find($id)->update($request->all());
+        return redirect()->route('ITS.index')->with('success', 'Ticket updated successfully');
     }
 
     /**

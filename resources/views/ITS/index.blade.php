@@ -8,7 +8,11 @@
             </div>
         </div>
     </div>
-
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{$message}}</p>
+        </div>
+    @endif
     <table class="table table-bordered">
         <tr>
             <th>TicketNo</th>
@@ -17,6 +21,7 @@
             <th>Last name</th>
             <th>Issue</th>
             <th>Progress</th>
+            <th>Respond</th>
         </tr>
         @foreach($tickets as $itsTicket)
             <tr>

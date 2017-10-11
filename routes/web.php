@@ -15,11 +15,13 @@ Route::get('/', 'PagesController@home');
 
 Route::get('faq', 'PagesController@faq');
 
-
-
 Route::get('review', 'TicketController@review');
 
 Route::resource('submission', 'TicketController');
 
 Route::resource('ITS', 'ITSController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
